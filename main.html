@@ -1,235 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>main</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"
- 	<meta name="viewport" content="width=device.width.initial.scale=1.0">
-
-   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-   <style type="text/css">/* #####################################################################
-   #
-   #   Project       : Modal Login with jQuery Effects
-   #   Author        : Rodrigo Amarante (rodrigockamarante)
-   #   Version       : 1.0
-   #   Created       : 07/28/2015
-   #   Last Change   : 08/02/2015
-   #
-   ##################################################################### */
-   
-@import url(http://fonts.googleapis.com/css?family=Roboto);
-
-* {
-    font-family: 'Roboto', sans-serif;
+  <title></title>
+  <style>
+  .nav-tabs {
+    margin-bottom: 15px;
 }
-
-#login-modal .modal-dialog {
-    width: 350px;
+.sign-with {
+    margin-top: 25px;
+    padding: 20px;
 }
-
-#login-modal input[type=text], input[type=password] {
-  margin-top: 10px;
-}
-
-#div-login-msg,
-#div-lost-msg,
-#div-register-msg {
-    border: 1px solid #dadfe1;
+div#OR {
     height: 30px;
-    line-height: 28px;
-    transition: all ease-in-out 500ms;
-}
-
-#div-login-msg.success,
-#div-lost-msg.success,
-#div-register-msg.success {
-    border: 1px solid #68c3a3;
-    background-color: #c8f7c5;
-}
-
-#div-login-msg.error,
-#div-lost-msg.error,
-#div-register-msg.error {
-    border: 1px solid #eb575b;
-    background-color: #ffcad1;
-}
-
-#icon-login-msg,
-#icon-lost-msg,
-#icon-register-msg {
     width: 30px;
-    float: left;
+    border: 1px solid #C2C2C2;
+    border-radius: 50%;
+    font-weight: bold;
     line-height: 28px;
     text-align: center;
-    background-color: #dadfe1;
-    margin-right: 5px;
-    transition: all ease-in-out 500ms;
+    font-size: 12px;
+    float: right;
+    position: absolute;
+    right: -16px;
+    top: 40%;
+    z-index: 1;
+    background: #DFDFDF;
 }
-
-#icon-login-msg.success,
-#icon-lost-msg.success,
-#icon-register-msg.success {
-    background-color: #68c3a3 !important;
-}
-
-#icon-login-msg.error,
-#icon-lost-msg.error,
-#icon-register-msg.error {
-    background-color: #eb575b !important;
-}
-
-#img_logo {
-    max-height: 100px;
-    max-width: 100px;
-}
-
-/* #########################################
-   #    override the bootstrap configs     #
-   ######################################### */
-
-.modal-backdrop.in {
-    filter: alpha(opacity=50);
-    opacity: .8;
-}
-
-.modal-content {
-    background-color: #ececec;
-    border: 1px solid #bdc3c7;
-    border-radius: 0px;
-    outline: 0;
-}
-
-.modal-header {
-    min-height: 16.43px;
-    padding: 15px 15px 15px 15px;
-    border-bottom: 0px;
-}
-
-.modal-body {
-    position: relative;
-    padding: 5px 15px 5px 15px;
-}
-
-.modal-footer {
-    padding: 15px 15px 15px 15px;
-    text-align: left;
-    border-top: 0px;
-}
-
-.checkbox {
-    margin-bottom: 0px;
-}
-
-.btn {
-    border-radius: 0px;
-}
-
-.btn:focus,
-.btn:active:focus,
-.btn.active:focus,
-.btn.focus,
-.btn:active.focus,
-.btn.active.focus {
-    outline: none;
-}
-
-.btn-lg, .btn-group-lg>.btn {
-    border-radius: 0px;
-}
-
-.btn-link {
-    padding: 5px 10px 0px 0px;
-    color: #95a5a6;
-}
-
-.btn-link:hover, .btn-link:focus {
-    color: #2c3e50;
-    text-decoration: none;
-}
-
-.glyphicon {
-    top: 0px;
-}
-
-.form-control {
-  border-radius: 0px;
-}
-
-
-.search-text{
-  margin-top:50px;
-  background-color:#7dabdb;
-  padding-top:60px;
-  padding-bottom:60px;
-}
-  
-.search-text .input-search{
-  height:45px;
-  width:400px;
-  padding-left:20px;
-    color:#333;
-} 
-
-.search-text .btn-search{
-  background-color:#7dabdb;
-  border:1px solid #FFF;
-  font-family:Roboto;
-  color:#FFF;
-  padding:11px 20px 11px 20px;
-}
-
-.search-text  .btn-search:hover{
-  background-color:#FFF;
-  color:#7dabdb;
-}
-
-.copyright{
-    background-color:#f0f0f0;
-}
-
-.copyright p{
-  font-family:Roboto;
-  padding:15px 0 10px 0;
-}
-
-footer{
-  background-color:#222222;
-  min-height:200px;
-  padding:80px 0 50px 0;
-}
-
-footer .menu li a{
-  font-family:Roboto;
-  color:#b1aca1;
-  padding:10px;
-  text-decoration:none;
-}
-
-footer .menu li a:hover{
-  color:#7dabdb;
-}
-
-.fa.fa-facebook , .fa.fa-dropbox, .fa.fa-flickr , .fa.fa-github , .fa.fa-linkedin ,.fa,fa-tumblr ,.fa.fa-google-plus , .fa.fa-tumblr {
-  color:#b1aca1;
-  font-size:20px;
-  padding:10px;
-  margin-bottom:50px;
-}
-
-.fa.fa-facebook:hover , .fa.fa-dropbox:hover , .fa.fa-flickr:hover  , .fa.fa-github:hover  , .fa.fa-linkedin:hover  ,.fa,fa-tumblr:hover  ,.fa.fa-google-plus:hover  , .fa.fa-tumblr:hover  {
-  color:#6794c2;
-}
-
-
-
 </style>
-   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="footer.css">
 </head>
 <body>
-	
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><div id="change">Navbar</div></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -240,7 +45,7 @@ footer .menu li a:hover{
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://www.facebook.com/">Link</a>
+        <a class="nav-link" href="#">Link</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -255,112 +60,132 @@ footer .menu li a:hover{
       </li>
      
     </ul>
-    <form class="form-inline my-2 my-lg-0"><!-- BEGIN # BOOTSNIP INFO -->
-<div class="container">
-  <div class="row">
-        <p class="text-center"><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">sign in</a></p>
-  </div>
-</div>
-<!-- END # BOOTSNIP INFO -->
-
-<!-- BEGIN # MODAL LOGIN -->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-      <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header" align="center">
-          <img class="img-circle" id="img_logo" src="http://bootsnipp.com/img/logo.jpg">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          </button>
+    <form class="form-inline my-2 my-lg-0">
+    
+<button class="btn btn-outline-success" data-toggle="modal" data-target="#myModal" id="signin1">
+    SignIN</button>
+    <button  class="btn btn-outline-success" type="button" style="display: none" onclick="log()" id="log1">Log-Out</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                    <center>Login / Registration </center></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#Login" data-toggle="tab">Login</a></li><pre> </pre>
+                            <li><a href="#Registration" data-toggle="tab">Registration</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="Login">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input  type="text" class="form-control" id="emailc" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="passwordc" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button style=" margin-left: 10px" type="button"onclick="validation();" class="btn btn-primary btn-sm">
+                                            Submit</button>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="Registration">
+                                <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Name</label>
+                                    <div class="col-sm-10">
+                                        <div class="row">
+                                          
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" placeholder="Name" id="namer" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-sm-2 control-label">
+                                        Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" id="emailr" placeholder="Email" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-sm-2 control-label">
+                                        Password</label>
+                                    <div class="col-sm-10">
+                                        <input type="password" class="form-control" id="passwordr" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-2">
+                                    </div>
+                                    <div class="col-sm-10">
+                                        <button style=" margin-left: 10px" type="button" class="btn btn-primary btn-sm" onclick="register();">
+                                            Register</button>
+                                        
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="OR" class="hidden-xs">
+                            OR</div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row text-center sign-with">
+                            <div class="col-md-12">
+                                <h3>
+                                    Sign in with</h3>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="btn-group btn-group-justified">
+                                    <a href="https://www.facebook.com" class="btn btn-primary">Facebook</a><pre> </pre> <a href="https://accounts.google.com/ServiceLogin/identifier?elo=1&flowName=GlifWebSignIn&flowEntry=AddSession" class="btn btn-danger">
+                                        Google</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-                
-                <!-- Begin # DIV Form -->
-                <div id="div-forms">
-                
-                    <!-- Begin # Login Form -->
-                    <form id="login-form">
-                    <div class="modal-body">
-                <div id="div-login-msg">
-                                <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-login-msg">Type your username and password.</span>
-                            </div>
-                <input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-                <input id="login_password" class="form-control" type="password" placeholder="Password" required>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
-                            </div>
-                  </div>
-                <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                            </div>
-                  <div>
-                                <button id="login_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-                                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
-                            </div>
-                </div>
-                    </form>
-                    <!-- End # Login Form -->
-                    
-                    <!-- Begin | Lost Password Form -->
-                    <form id="lost-form" style="display:none;">
-                  <div class="modal-body">
-                <div id="div-lost-msg">
-                                <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-lost-msg">Type your e-mail.</span>
-                            </div>
-                <input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
-                  </div>
-                <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Send</button>
-                            </div>
-                            <div>
-                                <button id="lost_login_btn" type="button" class="btn btn-link">Log In</button>
-                                <button id="lost_register_btn" type="button" class="btn btn-link">Register</button>
-                            </div>
-                </div>
-                    </form>
-                    <!-- End | Lost Password Form -->
-                    
-                    <!-- Begin | Register Form -->
-                    <form id="register-form" style="display:none;">
-                    <div class="modal-body">
-                <div id="div-register-msg">
-                                <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
-                                <span id="text-register-msg">Register an account.</span>
-                            </div>
-                <input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-                            <input id="register_password" class="form-control" type="password" placeholder="Password" required>
-                  </div>
-                <div class="modal-footer">
-                            <div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
-                            </div>
-                            <div>
-                                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
-                                <button id="register_lost_btn" type="button" class="btn btn-link">Lost Password?</button>
-                            </div>
-                </div>
-                    </form>
-                    <!-- End | Register Form -->
-                    
-                </div>
-                <!-- End # DIV Form -->
-                
-      </div>
     </div>
-  </div>
-    <!-- END # MODAL LOGIN -->
+</div>
+
     </form>
   </div>
 </nav>
 
-
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+
+
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -402,254 +227,132 @@ footer .menu li a:hover{
 
 <div class="card-deck">
   <div class="card">
-    <img class="card-img-top" src="card.jpg" alt="Card image cap">
+    <img class="card-img-top" src="card.jpg" alt="Card image cap" id="img0">
     <div class="card-body">
-      <h4 class="card-title">AngularJS</h4>
-      <p class="card-text">AngularJS (commonly referred to as "Angular.js" or "AngularJS 1.X") is a JavaScript-based open-source front-end web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications.</p>
-      <a href="https://en.wikipedia.org/wiki/AngularJS" class="btn btn-primary">more</a>
+      <h4 class="card-title" id="title0">AngularJS</h4>
+      <p class="card-text" id="con0">AngularJS (commonly referred to as "Angular.js" or "AngularJS 1.X") is a JavaScript-based open-source front-end web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications.</p>
+       <span id="id0" style="display:none"></span>
+      <a href="new.html" class="btn btn-primary"><button class="btn btn-primary" type="button" onclick="blog1('id0')">more</button></a>
     </div>
     <div class="card-footer">
       <small class="text-muted">card 1</small>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="card.jpg" alt="Card image cap">
+    <img class="card-img-top" src="card.jpg" alt="Card image cap" id="img1">
     <div class="card-body">
-      <h4 class="card-title">Bootstrap</h4>
-      <p class="card-text">Bootstrap is a free and open-source front-end web framework for designing websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions. Unlike many web frameworks, it concerns itself with front-end development only.</p>
-      <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" class="btn btn-primary">more</a>
+      <h4 class="card-title" id="title1">AngularJS</h4>
+      <p class="card-text" id="con1">AngularJS (commonly referred to as "Angular.js" or "AngularJS 1.X") is a JavaScript-based open-source front-end web application framework mainly maintained by Google and by a community of individuals and corporations to address many of the challenges encountered in developing single-page applications.</p>
+       <span id="id1" style="display:none"></span>
+      <a href="new.html" class="btn btn-primary"><button class="btn btn-primary" type="button" onclick="blog1('id1')">more</button></a>
     </div>
     <div class="card-footer">
       <small class="text-muted">card 2</small>
     </div>
   </div>
   <div class="card">
-    <img class="card-img-top" src="card.jpg" alt="Card image cap">
+    <img class="card-img-top" src="card.jpg" alt="Card image cap" id="img2">
     <div class="card-body">
-      <h4 class="card-title">JavaScript</h4>
-      <p class="card-text">JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games.  </p>
-      <a href="https://en.wikipedia.org/wiki/JavaScript" class="btn btn-primary">more</a>
+      <h4 class="card-title" id="title2">Bootstrap</h4>
+      <p class="card-text" id="con2">Bootstrap is a free and open-source front-end web framework for designing websites and web applications. It contains HTML- and CSS-based design templates for typography, forms, buttons, navigation and other interface components, as well as optional JavaScript extensions. Unlike many web frameworks, it concerns itself with front-end development only.</p>
+       <span id="id2" style="display:none"></span>
+      <a href="new.html" class="btn btn-primary"><button class="btn btn-primary" type="button" onclick="blog1('id2')">more</button></a>
     </div>
     <div class="card-footer">
       <small class="text-muted">card 3</small>
     </div>
   </div>
+  <div class="card">
+    <img class="card-img-top" src="card.jpg" alt="Card image cap" id="img3">
+    <div class="card-body">
+      <h4 class="card-title" id="title3">JavaScript</h4>
+      <p class="card-text" id="con3">JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games.  </p>
+       <span id="id3" style="display:none"></span>
+      <a href="new.html" class="btn btn-primary"><button class="btn btn-primary" type="button" onclick="blog1('id3')">more</button></a>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">card 4</small>
+    </div>
+  </div>
 </div>
 
 
-
-
-
-
- <div class="search-text"> 
-       <div class="container">
-         <div class="row text-center">
-         
-           <div class="form">
-                <form id="search-form" class="form-search form-horizontal">
-                    <input type="text" class="input-search" placeholder="Search">
-                    <button type="submit" class="btn-search">Search</button>
-                </form>
-            </div>
-        
-          </div>         
-       </div>     
-  </div>
+    <script type="text/javascript">
     
-    
-    <footer>
-     <div class="container">
-       <div class="row text-center">
-       
-                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <ul class="list-inline">
-                             
-                               <li>
-                                    <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                               </li>
-                               
-                               <li>
-                                    <a href="#"><i class="fa fa-dropbox fa-2x"></i></a>
-                               </li>
-                               
-                               <li>
-                                    <a href="#"><i class="fa fa-flickr fa-2x"></i></a> 
-                               </li>
-                              
-                               <li>
-                                    <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                               </li>
-                                
-                               <li>
-                                    <a href="#"><i class="fa fa-linkedin fa-2x"></i></a>
-                               </li>
-                               
-                               <li>
-                                    <a href="#"><i class="fa fa-tumblr fa-2x"></i></a>
-                               </li>
-                                
-                               <li>
-                                    <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-                              </li>
-                              
-                     </ul>
-                   </div>
-           
-                 <div class="col-md-6 col-sm-6 col-xs-12">
-                  <ul class="menu list-inline">
-                             
-                         <li>
-                            <a href="#">Home</a>
-                          </li>
-                               
-                          <li>
-                             <a href="#">About</a>
-                          </li>
-                               
-                          <li>
-                            <a href="#">Blog</a>
-                          </li>
-                               
-                          <li>
-                             <a href="#">Gallery </a>
-                          </li>
-                               
-                          <li>
-                            <a href="#">Contact</a>
-                         </li>
-               
-                 </ul>
-               </div>
-           
-           
-           </div> 
-        </div>
-    </footer>
-    
-    
-    <div class="copyright">
-     <div class="container">
-       
-         <div class="row text-center">
-          <p>Copyright © 2017 All rights reserved</p>
-         </div>
-         
-     </div>
-    </div>
-    
+    //var arr=[];
+  function register(){
+  //  alert("chutiya hai kya");
+  if(!localStorage.getItem("array"))
+    var arr=[];
+  else
+    var arr=JSON.parse(localStorage.getItem("array"));
+    var email=document.getElementById("emailr").value;
+    var name=document.getElementById("namer").value;
+    //console.log(uname);
+    var pname=document.getElementById("passwordr").value;
+    var obj={"name":name,"email":email,"pass":pname};
+    arr.push(obj);
+    alert("succesfull registration");
+    localStorage.setItem("array",JSON.stringify(arr));
   
-     
-    
-     
+  }
+    function validation(){
+    //  alert("chutiya");
+  var c=document.getElementById("emailc").value;
+  var c1=document.getElementById("passwordc").value;
+  var arrr=JSON.parse(localStorage.getItem("array"));
+  var i;
+  for(i=0;i<arrr.length;i++){
+    if(c==arrr[i].email&&c1==arrr[i].pass)
+    {
+      document.getElementById("change").innerHTML=arrr[i].name;
+      document.getElementById("signin1").style.display="none";
+      document.getElementById("log1").style.display="block";
+      return true;
+    }
+  }
+  
+    alert("wrong name or user id");
+    return false;
+}
+function log()
+{
+  document.getElementById("change").innerHTML="Home";
+      document.getElementById("signin1").style.display="block";
+      document.getElementById("log1").style.display="none";
 
-
-
-
-
-
-
-<script type="text/javascript">
-  /* #####################################################################
-   #
-   #   Project       : Modal Login with jQuery Effects
-   #   Author        : Rodrigo Amarante (rodrigockamarante)
-   #   Version       : 1.0
-   #   Created       : 07/29/2015
-   #   Last Change   : 08/04/2015
-   #
-   ##################################################################### */
+}
+    var xhttp=new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
    
-$(function() {
-    
-    var $formLogin = $('#login-form');
-    var $formLost = $('#lost-form');
-    var $formRegister = $('#register-form');
-    var $divForms = $('#div-forms');
-    var $modalAnimateTime = 300;
-    var $msgAnimateTime = 150;
-    var $msgShowTime = 2000;
-
-    $("form").submit(function () {
-        switch(this.id) {
-            case "login-form":
-                var $lg_username=$('#login_username').val();
-                var $lg_password=$('#login_password').val();
-                if ($lg_username == "ERROR") {
-                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
-                } else {
-                    msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
-                }
-                return false;
-                break;
-            case "lost-form":
-                var $ls_email=$('#lost_email').val();
-                if ($ls_email == "ERROR") {
-                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
-                } else {
-                    msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "success", "glyphicon-ok", "Send OK");
-                }
-                return false;
-                break;
-            case "register-form":
-                var $rg_username=$('#register_username').val();
-                var $rg_email=$('#register_email').val();
-                var $rg_password=$('#register_password').val();
-                if ($rg_username == "ERROR") {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
-                } else {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
-                }
-                return false;
-                break;
-            default:
-                return false;
-        }
-        return false;
-    });
-    
-    $('#login_register_btn').click( function () { modalAnimate($formLogin, $formRegister) });
-    $('#register_login_btn').click( function () { modalAnimate($formRegister, $formLogin); });
-    $('#login_lost_btn').click( function () { modalAnimate($formLogin, $formLost); });
-    $('#lost_login_btn').click( function () { modalAnimate($formLost, $formLogin); });
-    $('#lost_register_btn').click( function () { modalAnimate($formLost, $formRegister); });
-    $('#register_lost_btn').click( function () { modalAnimate($formRegister, $formLost); });
-    
-    function modalAnimate ($oldForm, $newForm) {
-        var $oldH = $oldForm.height();
-        var $newH = $newForm.height();
-        $divForms.css("height",$oldH);
-        $oldForm.fadeToggle($modalAnimateTime, function(){
-            $divForms.animate({height: $newH}, $modalAnimateTime, function(){
-                $newForm.fadeToggle($modalAnimateTime);
-            });
-        });
+      if(this.readyState==4&&this.status==200){
+      var obj=JSON.parse(this.responseText);
+      console.log(obj);
+      for(i=0;i<obj.length;i++)
+      {
+        document.getElementById("title"+i).innerHTML=obj[i].title;
+        document.getElementById("con"+i).innerHTML=obj[i].content;
+        document.getElementById("img"+i).src=obj[i].imageUrl;
+        document.getElementById("id" +i).innerHTML=obj[i].id;
+      }
+   
+      }
+    };
+ 
+    xhttp.open("GET","http://koushikmln.com:7500/blogs",true);
+    xhttp.setRequestHeader("Content-Type","application/JSON");
+    xhttp.send();
+    function blog1(id)
+    {
+      localStorage.setItem("id",document.getElementById(id).innerHTML);
     }
-    
-    function msgFade ($msgId, $msgText) {
-        $msgId.fadeOut($msgAnimateTime, function() {
-            $(this).text($msgText).fadeIn($msgAnimateTime);
-        });
-    }
-    
-    function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
-        var $msgOld = $divTag.text();
-        msgFade($textTag, $msgText);
-        $divTag.addClass($divClass);
-        $iconTag.removeClass("glyphicon-chevron-right");
-        $iconTag.addClass($iconClass + " " + $divClass);
-        setTimeout(function() {
-            msgFade($textTag, $msgOld);
-            $divTag.removeClass($divClass);
-            $iconTag.addClass("glyphicon-chevron-right");
-            $iconTag.removeClass($iconClass + " " + $divClass);
-      }, $msgShowTime);
-    }
-});
 </script>
-
-
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $('#myModal').modal('show');
+// www.jquery2dotnet.com
+</script>
 </body>
 </html>
